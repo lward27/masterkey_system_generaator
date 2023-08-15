@@ -43,13 +43,6 @@ async def get_generate(
     combined_key_bitting_array.append([eval(i) for i in list(key_bitting_array_4)])
     combined_key_bitting_array.append([eval(i) for i in list(key_bitting_array_5)]) if key_bitting_array_5 else None
     kBA_length = len(combined_key_bitting_array)
-    # print([eval(i) for i in list(great_grand_master_key)])
-    # print([eval(i) for i in list(rotation)])
-    # print(combined_key_bitting_array)
-    # print(number_of_pins)
-    # print(kBA_length)
-    # print(number_of_masters)
-    # print(maximum_adjacent_cuts)
     mks = MasterKeySystemGen([eval(i) for i in list(great_grand_master_key)], [eval(i) for i in list(rotation)], combined_key_bitting_array, number_of_pins, kBA_length, number_of_masters, maximum_adjacent_cuts)
     generator_output = mks.build_iterator()
     mks = {
@@ -165,26 +158,3 @@ async def retrieve_system_change_keys(masterkey_system_id: uuid.UUID, page_maste
     results = cur.fetchall()
     cur.close()
     return results
-
-
-
-# mk = MasterKeySystemGen([3,5,2,4,6,7], [1, 2, 3, 4, 5, 6], [[1, 3, 5, 6, 2, 4],[4, 5, 2, 3, 1, 6],[1, 2, 3, 4, 5, 6],[6, 4, 3, 5, 2, 1]], 6, 4, 16, 7)
-# system_output = mk.build_iterator()
-
-# @app.get("/info")
-# async def get_info(ticker_name: str):
-#     tick = yf.Ticker(ticker_name)
-#     return tick.info
-
-# @app.get("/history")
-# async def get_history(ticker_name: str, period: str, return_type: str = Query("dict", enum=["dict", "html", "text", "dataframe"])):
-#     tick = yf.Ticker(ticker_name)
-#     hist = tick.history(period="1mo")
-#     if return_type == "dict":
-#         return hist.to_dict()
-#     if return_type == "html":
-#         return HTMLResponse(content=hist.to_html(),status_code=200)
-#     if return_type == "text":
-#         return hist.to_string()
-#     if return_type == "dataframe":
-#         return hist

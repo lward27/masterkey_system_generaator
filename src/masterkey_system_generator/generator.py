@@ -2,9 +2,6 @@ import uuid
 from math import log
 from pprint import pprint
 
-
-
-
 class MasterKeySystemGen:
     def __init__(self, _ggmk, _rotation, _kBA, _number_of_pins, _kBA_length, _number_masters, _MACS):
         self.id = uuid.uuid4()
