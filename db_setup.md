@@ -57,6 +57,7 @@ CREATE TABLE bitting (
 );
 ```
 
+HERE DOWN IS NOT RELEVANT TO RUNNING THE MAIN APPLICATION AND IS JUST FOR FUN!
 
 ## To setup logical replication
 

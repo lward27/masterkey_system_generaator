@@ -7,7 +7,7 @@ import psycopg2.extras
 
 app = FastAPI()
 connection = psycopg2.connect(
-    host="127.0.0.1",
+    host="172.17.0.3",
     database="masterkey_system_generator",
     user="postgres",
     password="topsecretpassword",
